@@ -20,7 +20,7 @@ export default function MessageBox(){
 								<img src="https://via.placeholder.com/110x110" className="msg-avatar" alt="user avatar"/>
 							</div>
 							<div className="flex-grow-1">
-								<h6 className="msg-name">Daisy Anderson <span className="msg-time float-end">5 sec
+								<h6 className="msg-name">Agisna Putri <span className="msg-time float-end">5 sec
 							ago</span></h6>
 								<p className="msg-info">The standard chunk of lorem</p>
 							</div>
@@ -32,7 +32,7 @@ export default function MessageBox(){
 								<img src="https://via.placeholder.com/110x110" className="msg-avatar" alt="user avatar"/>
 							</div>
 							<div className="flex-grow-1">
-								<h6 className="msg-name">Althea Cabardo <span className="msg-time float-end">14
+								<h6 className="msg-name">Ardi Saputra <span className="msg-time float-end">14
 							sec ago</span></h6>
 								<p className="msg-info">Many desktop publishing packages</p>
 							</div>
@@ -44,7 +44,7 @@ export default function MessageBox(){
 								<img src="https://via.placeholder.com/110x110" className="msg-avatar" alt="user avatar"/>
 							</div>
 							<div className="flex-grow-1">
-								<h6 className="msg-name">Oscar Garner <span className="msg-time float-end">8 min
+								<h6 className="msg-name">Marni Hidayah <span className="msg-time float-end">8 min
 							ago</span></h6>
 								<p className="msg-info">Various versions have evolved over</p>
 							</div>
@@ -56,7 +56,7 @@ export default function MessageBox(){
 								<img src="https://via.placeholder.com/110x110" className="msg-avatar" alt="user avatar"/>
 							</div>
 							<div className="flex-grow-1">
-								<h6 className="msg-name">Katherine Pechon <span className="msg-time float-end">15
+								<h6 className="msg-name">Abdul Qadir <span className="msg-time float-end">15
 							min ago</span></h6>
 								<p className="msg-info">Making this the first true generator</p>
 							</div>

@@ -3,7 +3,8 @@ import React from 'react';
 export default function NotifBox(){
 	return (
 		<>
-			<a className="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span className="alert-count">7</span>
+			<a className="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				<span className="alert-count">3</span>
 				<i className='bx bx-bell'></i>
 			</a>
 			<div className="dropdown-menu dropdown-menu-end">
@@ -16,12 +17,11 @@ export default function NotifBox(){
 				<div className="header-notifications-list">
 					<a className="dropdown-item" href="javascript:;">
 						<div className="d-flex align-items-center">
-							<div className="notify"><i className="bx bx-group"></i>
+							<div className="notify"><i className="bx bx-cart-alt"></i>
 							</div>
 							<div className="flex-grow-1">
-								<h6 className="msg-name">New Customers<span className="msg-time float-end">14 Sec
-							ago</span></h6>
-								<p className="msg-info">5 new user registered</p>
+								<h6 className="msg-name">Pesanan Baru <span className="msg-time float-end">2 min ago</span></h6>
+								<p className="msg-info">Kamu telah menerima pesanan baru</p>
 							</div>
 						</div>
 					</a>
@@ -30,20 +30,18 @@ export default function NotifBox(){
 							<div className="notify"><i className="bx bx-cart-alt"></i>
 							</div>
 							<div className="flex-grow-1">
-								<h6 className="msg-name">New Orders <span className="msg-time float-end">2 min
-							ago</span></h6>
-								<p className="msg-info">You have recived new orders</p>
+								<h6 className="msg-name">Pesanan Baru <span className="msg-time float-end">2 min ago</span></h6>
+								<p className="msg-info">Kamu telah menerima pesanan baru</p>
 							</div>
 						</div>
 					</a>
 					<a className="dropdown-item" href="javascript:;">
 						<div className="d-flex align-items-center">
-							<div className="notify"><i className="bx bx-file"></i>
+							<div className="notify"><i className="bx bx-cart-alt"></i>
 							</div>
 							<div className="flex-grow-1">
-								<h6 className="msg-name">24 PDF File<span className="msg-time float-end">19 min
-							ago</span></h6>
-								<p className="msg-info">The pdf files generated</p>
+								<h6 className="msg-name">Pesanan Baru <span className="msg-time float-end">2 min ago</span></h6>
+								<p className="msg-info">Kamu telah menerima pesanan baru</p>
 							</div>
 						</div>
 					</a>
