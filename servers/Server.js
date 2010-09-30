@@ -16,8 +16,8 @@ app.use('/e-book', express.static(path.join(__dirname, 'e-book')))
 app.use(express.static(path.join(__dirname, 'admin')))
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'admin', 'index.html'))
-  // res.json({ message: "Welcome to starlova application." });
+  // res.sendFile(path.join(__dirname, 'admin/build', 'index.html'))
+  res.json({ message: "Welcome to starlova application." });
 })
 
 // API ROUTES
