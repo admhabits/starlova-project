@@ -13,11 +13,11 @@ app.use(express.urlencoded({ extended: false }));
 
 // this func allow users to visit this path 
 app.use('/e-book', express.static(path.join(__dirname, 'e-book')))
-app.use(express.static(path.join(__dirname, 'admin')))
+app.use(express.static(path.join(__dirname, 'admin/build')))
 
 app.get('/*', (req, res) => {
-  // res.sendFile(path.join(__dirname, 'admin/build', 'index.html'))
-  res.json({ message: "Welcome to starlova application." });
+  res.sendFile(path.join(__dirname, 'admin/build', 'index.html'))
+  // res.json({ message: "Welcome to starlova application." });
 })
 
 // API ROUTES
