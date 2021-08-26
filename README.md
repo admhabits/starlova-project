@@ -19,6 +19,13 @@ React Native Starter Code With Expo
 ## USEFUL LINK FOR SIGN UP APPLE ID DEV ACCOUNT
 > Apple ID Account : https://developer.apple.com/account/resources/certificates/list
 
+### WARNING!! 
+
+WHEN YOU WILL INSTALL NEW SOME PACKAGE DEPENDENCY WITH EXPO :
+> You must install package with typing by command run **expo install [Package Name]**
+> If you **install package using command yarn directly** the project will not working properly.
+> The reason is the **expo** sometimes **required** the **old package version**
+
 ### Thanks. Happy Coding and Learning. Regard me **Alam Wibowo.**
 
 > Contact Information
