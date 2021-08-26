@@ -5,7 +5,29 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.jersi.cilacap"
+    },
+    "ios": {
+      "bundleIdentifier": "com.jersi.cilacap"
+    },
+    // "packagerOpts": {
+    //   "config": "metro.config.js",
+    //   "sourceExts": [
+    //     "expo.ts",
+    //     "expo.tsx",
+    //     "expo.js",
+    //     "expo.jsx",
+    //     "ts",
+    //     "tsx",
+    //     "js",
+    //     "jsx",
+    //     "json",
+    //     "wasm",
+    //     "svg"
+    //   ]
+    // }
   },
   "name": "jersipedia"
 }
