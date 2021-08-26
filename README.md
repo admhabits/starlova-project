@@ -10,8 +10,17 @@ React Native Starter Code With Expo
 7. Download **Expo Client** from **Google Playstore** 
 8. Open the Expo Client App, Finally Scan QR Code with your Android or IOS Device
 
-Thanks. Happy Coding and Learning. Regard me **Alam Wibowo.**
+## BUILDING APPS AND DISTRIBUTION
 
-Contact Information:
-E-mail : admhabits@gmail.com
-Webiste : www.arkanaputra.com
+1. To build your Android App type command expo build:android
+2. To build your IOS App type command expo build:ios
+3. To build your Web App type command expo build:web
+
+## USEFUL LINK FOR SIGN UP APPLE ID DEV ACCOUNT
+> Apple ID Account : https://developer.apple.com/account/resources/certificates/list
+
+### Thanks. Happy Coding and Learning. Regard me **Alam Wibowo.**
+
+> Contact Information
+> E-mail : admhabits@gmail.com
+> Webiste : www.arkanaputra.com
