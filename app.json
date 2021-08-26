@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "jersipedia",
+    "slug": "jersipedia",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "jersipedia"
+}
