@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   logo: {
-    width: responsiveWidth(57),
-    height: responsiveHeight(70),
+    width: responsiveWidth(50),
+    height: responsiveHeight(60),
   },
 });

@@ -6,12 +6,14 @@ import Tombol from '../Tombol';
 const CardJersey = ({jersey, navigation}) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.card}>
+      <TouchableOpacity style={styles.card} 
+            onPress={() => navigation.navigate('JerseyDetail', { jersey })
+        }>
         <Image source={{uri: jersey.gambar[0]}} style={styles.gambar} />
         <Text style={styles.text}>{jersey.nama} </Text>
       </TouchableOpacity>
 
-      <Tombol type="text" title="Detail" padding={7} onPress={() => navigation.navigate('JerseyDetail', { jersey }) }/>
+      {/*<Tombol type="text" title="Detail" padding={7}/>*/}
     </View>
   );
 };
@@ -37,7 +39,8 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: fonts.primary.bold,
         fontSize: 13,
-        textTransform: 'capitalize',
-        textAlign: 'center'
+        textTransform: 'uppercase',
+        textAlign: 'center',
+        color: colors.primary
     }
 });

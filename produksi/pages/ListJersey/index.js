@@ -81,10 +81,11 @@ const styles = StyleSheet.create({
     marginTop: -30,
   },
   pilihLiga: {
-    marginHorizontal: 30,
+    marginTop: -10,
+    marginHorizontal: 40,
   },
   pilihJersey: {
-    marginHorizontal: 30,
+    marginHorizontal: 40,
     marginTop: 10,
   },
   label: {

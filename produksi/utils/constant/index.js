@@ -18,7 +18,7 @@ export const ORIGIN_CITY = '349';
 export const HEADER_MIDTRANS = {
   Accept: 'application/json',
   'Content-Type': 'application/json',
-  Authorization: 'Basic [ISI DENGAN API KEY ANDA]',
+  Authorization: 'Basic U0ItTWlkLXNlcnZlci1zTFFDbHZjQXVXY1VRdElFVkpqQlhlSzU=',
 };
 
 export const URL_MIDTRANS = 'https://app.sandbox.midtrans.com/snap/v1/';

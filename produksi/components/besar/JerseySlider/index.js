@@ -40,12 +40,15 @@ export default class JerseySlider extends Component {
           sliderBoxHeight={responsiveHeight(430)}
           ImageComponentStyle={styles.jersey}
           dotStyle={styles.dotStyle}
-          dotColor={colors.primary}
-          imageLoadingColor={colors.primary}
+          dotColor={colors.secondary}
+          imageLoadingColor={colors.yellow}
           onCurrentImagePressed={(index) => this.clickPreview(index)}
         />
 
-        <Modal visible={openImage} transparent={true} onRequestClose={() => this.setState({openImage: false})}>
+        <Modal 
+            visible={openImage} 
+            transparent={true} 
+            onRequestClose={() => this.setState({openImage: true})}>
           <ImageViewer
             imageUrls={previewImage}
             backgroundColor={colors.primary}
@@ -65,6 +68,6 @@ const styles = StyleSheet.create({
     width: responsiveWidth(344),
   },
   dotStyle: {
-    marginTop: -50,
+    marginTop: -60,
   },
 });

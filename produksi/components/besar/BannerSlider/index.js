@@ -20,7 +20,7 @@ export default class BannerSlider extends Component {
           images={this.state.images}
           autoplay
           circleLoop
-          sliderBoxHeight={responsiveHeight(132)}
+          sliderBoxHeight={responsiveHeight(160)}
           ImageComponentStyle={styles.slider}
           dotStyle={styles.dotStyle}
           dotColor={colors.primary}
@@ -33,7 +33,7 @@ export default class BannerSlider extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: -15
+        marginTop: -30
     },
     slider: {
         borderRadius: 10,

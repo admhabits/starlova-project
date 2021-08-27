@@ -18,7 +18,7 @@ class Home extends Component {
   componentDidMount() {
     this._unsubscribe = this.props.navigation.addListener('focus', () => {
       this.props.dispatch(getListLiga());
-      this.props.dispatch(limitJersey());
+      this.props.dispatch(limitJersey(4));
     });
   }
 
@@ -46,10 +46,14 @@ class Home extends Component {
             </Text>
             <ListJerseys navigation={navigation}/>
 
-            <Tombol title="Lihat Semua" type="text" padding={7} />
+            <Tombol 
+                title="Lihat Semua" 
+                type="text" 
+                padding={10} 
+                onPress={()=> navigation.navigate('ListJersey')} />
           </View>
 
-          <Jarak height={100}/>
+          <Jarak height={80}/>
         </ScrollView>
       </View>
     );
@@ -59,13 +63,16 @@ class Home extends Component {
 export default connect()(Home)
 
 const styles = StyleSheet.create({
-  page: {flex: 1, backgroundColor: colors.white, marginTop: StatusBar.currentHeight},
+  page: {
+    flex: 1, backgroundColor: colors.white, 
+    marginTop: StatusBar.currentHeight,
+  },
   pilihLiga: {
-    marginHorizontal: 30,
+    marginHorizontal: 40,
     marginTop: 10,
   },
   pilihJersey: {
-    marginHorizontal: 30,
+    marginHorizontal: 40,
     marginTop: 10,
   },
   label: {

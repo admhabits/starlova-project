@@ -61,13 +61,13 @@ export const getListJersey = (idLiga, keyword) => {
   };
 };
 
-export const limitJersey = () => {
+export const limitJersey = (limit) => {
   return (dispatch) => {
     dispatchLoading(dispatch, GET_LIST_JERSEY);
 
     FIREBASE.database()
       .ref('jerseys')
-      .limitToLast(6)
+      .limitToLast(limit)
       .once('value', (querySnapshot) => {
         //Hasil
         let data = querySnapshot.val();

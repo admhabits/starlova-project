@@ -92,8 +92,8 @@ class JerseyDetail extends Component {
         </View>
         <JerseySlider images={images} />
         
-        <Text style={styles.badgeRight}>Berat : {jersey.berat}</Text>
-        <Text style={styles.badgeLeft}> Jenis : {jersey.jenis}</Text>
+        <Text style={styles.badgeRight}>Berat : {jersey.berat} Gram</Text>
+        <Text style={styles.badgeLeft}>{jersey.jenis}</Text>
         
         <View style={styles.container}>
           <View style={styles.liga}>
