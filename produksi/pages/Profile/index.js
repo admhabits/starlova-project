@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View, Image} from 'react-native';
+import {Text, StyleSheet, View, Image, StatusBar} from 'react-native';
 import { colors, fonts, getData, responsiveHeight, responsiveWidth } from '../../utils'
 import { dummyProfile, dummyMenu } from '../../data'
 import { RFValue } from "react-native-responsive-fontsize";
@@ -52,8 +52,8 @@ export default class Profile extends Component {
           <Image source={profile.avatar ? {uri: profile.avatar } : DefaultImage} style={styles.foto} />
           <View style={styles.profile}>
             <Text style={styles.nama}>{profile.nama}</Text>
-            <Text style={styles.desc}>No. HP : {profile.nohp}</Text>
-            <Text style={styles.desc}>{profile.alamat}</Text>
+            {/*<Text style={styles.desc}>No. HP : {profile.nohp}</Text>
+            <Text style={styles.desc}>{profile.alamat}</Text>*/}
           </View>
 
           <ListMenu menus={menus} navigation={this.props.navigation}/>
@@ -67,7 +67,8 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
   page: {
     flex: 1,
-    backgroundColor: colors.primary
+    backgroundColor: colors.primary,
+    marginTop: StatusBar.currentHeight
   },
   container: {
     position: 'absolute',
@@ -76,7 +77,8 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: colors.white,
     borderTopRightRadius: 40,
-    borderTopLeftRadius: 40
+    borderTopLeftRadius: 40,
+    marginVertical: 10
   },
   foto: {
     width: responsiveWidth(150),
@@ -87,14 +89,16 @@ const styles = StyleSheet.create({
   },
   profile: {
     marginTop: 10,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginVertical: 14
   },
   nama: {
     fontFamily: fonts.primary.bold,
-    fontSize: RFValue(24, heightMobileUI)
+    fontSize: RFValue(24, heightMobileUI),
+    color: colors.primary
   },
   desc: {
     fontFamily: fonts.primary.regular,
-    fontSize: RFValue(18, heightMobileUI)
+    fontSize: RFValue(18, heightMobileUI),
   }
 });

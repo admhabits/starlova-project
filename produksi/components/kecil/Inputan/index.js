@@ -26,6 +26,7 @@ const Inputan = ({
           value={value}
           onChangeText={onChangeText}
           editable={disabled ? false : true}
+          placeholder={placeholder}
         />
       </View>
     );
@@ -54,6 +55,7 @@ const styles = StyleSheet.create({
   label: (fontSize) => ({
     fontSize: fontSize ? fontSize : 18,
     fontFamily: fonts.primary.regular,
+     marginBottom: 5
   }),
   input: (width, height, fontSize) => ({
     fontSize: fontSize ? fontSize : 18,
@@ -65,6 +67,7 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
     paddingVertical: 5,
     paddingHorizontal: 10,
+
   }),
   inputTextArea: (fontSize) => ({
     fontSize: fontSize ? fontSize : 18,
@@ -75,5 +78,6 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 10,
     textAlignVertical: 'top',
+
   }),
 });

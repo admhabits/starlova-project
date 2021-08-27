@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, View, StatusBar } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { connect } from 'react-redux';
 import { updatePesanan } from '../../actions/PesananAction'
@@ -46,5 +46,6 @@ const styles = StyleSheet.create({
         flex: 1,
         marginTop: 10,
         marginBottom: 50,
+        marginTop: StatusBar.currentHeight
     }
 })

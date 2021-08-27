@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View, StatusBar} from 'react-native';
 import {HeaderComponent, ListJerseys, ListLiga} from '../../components';
 import {colors, fonts} from '../../utils';
 import {Jarak} from '../../components';
@@ -76,7 +76,7 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, null)(ListJersey);
 
 const styles = StyleSheet.create({
-  page: {flex: 1, backgroundColor: colors.white},
+  page: {flex: 1, backgroundColor: colors.white, marginTop: StatusBar.currentHeight},
   container: {
     marginTop: -30,
   },

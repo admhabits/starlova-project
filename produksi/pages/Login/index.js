@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Alert, StyleSheet, Text, View} from 'react-native';
+import {Alert, StyleSheet, Text, View, StatusBar} from 'react-native';
 import {Ilustrasi, Logo} from '../../assets';
 import {Inputan, Jarak, Tombol} from '../../components';
 import {colors, fonts, responsiveHeight} from '../../utils';
@@ -96,6 +96,7 @@ const styles = StyleSheet.create({
   pages: {
     flex: 1,
     backgroundColor: colors.white,
+    marginTop: StatusBar.currentHeight
   },
   ilustrasi: {
     position: 'absolute',

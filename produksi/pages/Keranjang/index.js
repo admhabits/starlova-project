@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View} from 'react-native';
+import {Text, StyleSheet, View, StatusBar} from 'react-native';
 import {dummyPesanans} from '../../data';
 import {ListKeranjang, Tombol} from '../../components';
 import {
@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: colors.white,
+    marginTop: StatusBar.currentHeight
   },
   footer: {
     paddingHorizontal: 30,

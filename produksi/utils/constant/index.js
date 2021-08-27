@@ -3,7 +3,7 @@ export const widthMobileUI = 414;
 
 export const API_TIMEOUT = 120000;
 export const API_RAJAONGKIR = 'https://api.rajaongkir.com/starter/';
-export const API_KEY = '[MASUKKAN DISINI]';
+export const API_KEY = '5f9ddaca8b81cc94c5b1a84a01a315da';
 export const API_HEADER_RAJAONGKIR = {
   key: API_KEY,
 };

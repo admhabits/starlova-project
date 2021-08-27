@@ -8,6 +8,7 @@ import {
   Keyboard,
   ScrollView,
   Alert,
+  StatusBar
 } from 'react-native';
 import {colors, fonts, responsiveHeight, responsiveWidth} from '../../utils';
 import {IlustrasiRegister1} from '../../assets';
@@ -107,6 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
     paddingTop: 20,
+    marginTop: StatusBar.currentHeight
   },
   ilustrasi: {
     alignItems: 'center',

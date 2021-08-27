@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import {ListHistory} from '../../components';
 import {colors, getData} from '../../utils';
@@ -33,5 +33,6 @@ const styles = StyleSheet.create({
   pages: {
     backgroundColor: colors.white,
     flex: 1,
+    marginTop: StatusBar.currentHeight
   },
 });

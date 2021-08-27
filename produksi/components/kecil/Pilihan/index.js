@@ -45,14 +45,15 @@ const styles = StyleSheet.create({
   label: (fontSize) => ({
     fontSize: fontSize ? fontSize : 18,
     fontFamily: fonts.primary.regular,
+    marginBottom: 5
   }),
   picker: (width, height, fontSize) => ({
     fontSize: fontSize ? fontSize : 18,
     fontFamily: fonts.primary.regular,
     width: width,
     height: height ? height : responsiveHeight(46),
-    marginTop: -10,
-    marginBottom: 10
+    marginTop: 0,
+    marginBottom: 0,
   }),
   wrapperPicker: {
     borderWidth: 1,

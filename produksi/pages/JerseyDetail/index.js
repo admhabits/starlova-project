@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Alert, StyleSheet, Text, View} from 'react-native';
+import {Alert, StyleSheet, Text, View, StatusBar} from 'react-native';
 import {
   colors,
   fonts,
@@ -29,7 +29,7 @@ class JerseyDetail extends Component {
     this.state = {
       jersey: this.props.route.params.jersey,
       images: this.props.route.params.jersey.gambar,
-      jumlah: '',
+      jumlah: '1',
       ukuran: '',
       keterangan: '',
       uid: '',
@@ -91,6 +91,10 @@ class JerseyDetail extends Component {
           />
         </View>
         <JerseySlider images={images} />
+        
+        <Text style={styles.badgeRight}>Berat : {jersey.berat}</Text>
+        <Text style={styles.badgeLeft}> Jenis : {jersey.jenis}</Text>
+        
         <View style={styles.container}>
           <View style={styles.liga}>
             <CardLiga
@@ -99,18 +103,20 @@ class JerseyDetail extends Component {
               id={jersey.liga}
             />
           </View>
+          
           <View style={styles.desc}>
-            <Text style={styles.nama}>{jersey.nama}</Text>
-            <Text style={styles.harga}>
-              Harga : Rp. {numberWithCommas(jersey.harga)}
-            </Text>
+            <View style={styles.wrapperNamaHarga}>
+              <Text style={styles.nama}>{jersey.nama} </Text>
+              <Text style={styles.harga}>
+                Rp. {numberWithCommas(jersey.harga)}
+              </Text>
+            </View>
+            {/*<View style={styles.garis} />*/}
 
-            <View style={styles.garis} />
-
-            <View style={styles.wrapperJenisBerat}>
+            {/*<View style={styles.wrapperJenisBerat}>
               <Text style={styles.jenisBerat}>Jenis : {jersey.jenis}</Text>
               <Text style={styles.jenisBerat}>Berat : {jersey.berat}</Text>
-            </View>
+            </View>*/}
 
             <View style={styles.wrapperInput}>
               <Inputan
@@ -136,7 +142,7 @@ class JerseyDetail extends Component {
               label="Keterangan"
               textarea
               fontSize={13}
-              placeholder="Isi jika ingin menambahkan Name Tag (nama & nomor punggung"
+              placeholder="Isi formulir ini jika ingin minta dibuatkan Name Tag [ Nama dan Nomor Punggung ]"
               value={keterangan}
               onChangeText={(keterangan) => this.setState({keterangan})}
             />
@@ -171,6 +177,7 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: colors.primary,
+    marginTop: StatusBar.currentHeight
   },
   container: {
     position: 'absolute',
@@ -183,21 +190,62 @@ const styles = StyleSheet.create({
   },
   button: {
     position: 'absolute',
-    marginTop: 30,
+    marginTop: 50,
     marginLeft: 30,
     zIndex: 1,
   },
   desc: {
     marginHorizontal: 30,
+    marginVertical: 10,
   },
+
+  wrapperNamaHarga : {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 15
+  },
+
   nama: {
     fontSize: RFValue(24, heightMobileUI),
     fontFamily: fonts.primary.bold,
-    textTransform: 'capitalize',
+    textTransform: 'uppercase',
+    color: colors.primary,
+    marginTop: 0,
+    flex: 2.5,
   },
   harga: {
     fontSize: RFValue(24, heightMobileUI),
     fontFamily: fonts.primary.light,
+    flex: 1,
+    // alignSelf: 'center',
+    textAlign: 'right',
+    color: 'mediumseagreen',
+    // position: 'absolute',
+    // right: 0,
+    // top: 0
+  },
+
+  badgeRight: {
+    fontSize: RFValue(18, heightMobileUI),
+    fontFamily: fonts.primary.light,
+    position: 'absolute',
+    right: 10,
+    top: 10,
+    zIndex: 10,
+    color: colors.secondary,
+    justifyContent: 'center',
+    textTransform: 'uppercase',
+  },
+  badgeLeft: {
+    fontSize: RFValue(18, heightMobileUI),
+    fontFamily: fonts.primary.light,
+    position: 'absolute',
+    left: 10,
+    top: 10,
+    zIndex: 10,
+    color: colors.secondary,
+    justifyContent: 'center',
+    textTransform: 'uppercase',
   },
   liga: {
     alignItems: 'flex-end',
@@ -211,11 +259,12 @@ const styles = StyleSheet.create({
   wrapperJenisBerat: {
     flexDirection: 'row',
     marginBottom: 5,
+    justifyContent: 'space-between'
   },
   jenisBerat: {
-    fontSize: 13,
+    fontSize: 14,
     fontFamily: fonts.primary.regular,
-    marginRight: 30,
+    marginRight: 0,
   },
   wrapperInput: {
     flexDirection: 'row',
