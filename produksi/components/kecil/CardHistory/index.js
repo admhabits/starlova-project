@@ -95,12 +95,12 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.15,
     shadowRadius: 3.84,
 
     elevation: 5,
     padding: 15,
-    borderRadius: 10,
+    borderRadius: 5,
     marginBottom: 20,
   },
   history: {

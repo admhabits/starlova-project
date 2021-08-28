@@ -24,7 +24,7 @@ const CardKeranjang = ({keranjang, keranjangUtama, id, dispatch}) => {
 
       <View style={styles.desc}>
         <Text style={styles.nama}>{keranjang.product.nama}</Text>
-        <Text style={styles.text}>
+        <Text style={styles.harga}>
           Rp. {numberWithCommas(keranjang.product.harga)}
         </Text>
 
@@ -36,7 +36,7 @@ const CardKeranjang = ({keranjang, keranjangUtama, id, dispatch}) => {
         </View>
         <View style={styles.rowsCart}>
           <Text style={styles.textBold}>
-            Sub Total :
+            Sub Harga Total :
           </Text>        
           <Text style={styles.totalharga}>
             Rp. {numberWithCommas(keranjang.totalHarga)}
@@ -45,7 +45,7 @@ const CardKeranjang = ({keranjang, keranjangUtama, id, dispatch}) => {
 
         <View style={styles.notes}>
           <Jarak height={responsiveHeight(10)}/>
-          <Text style={styles.textBold}>Notes :</Text>
+          <Text style={styles.textBold}>Keterangan :</Text>
           <Jarak height={responsiveHeight(10)}/>
           <Text style={styles.textLight}>{keranjang.keterangan} </Text>
           <Jarak height={responsiveHeight(10)}/>
@@ -72,11 +72,11 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.15,
     shadowRadius: 3.84,
     elevation: 5,
     marginHorizontal: 30,
-    borderRadius: 10,
+    borderRadius: 5,
     alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 15,
@@ -96,10 +96,17 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primary.bold,
     fontSize: 12,
     textTransform: 'uppercase',
-    maxWidth: 300
+    maxWidth: 300,
+    color: colors.primary
+  },
+
+   harga: {
+    fontFamily: fonts.primary.regular,
+    fontSize: 11,
+    color: colors.primary
   },
   totalharga: {
-    fontFamily: fonts.primary.bold,
+    fontFamily: fonts.primary.light,
     fontSize: 11,
     color: colors.green
   },

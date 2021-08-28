@@ -211,15 +211,15 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     color: colors.primary,
     marginTop: 0,
-    flex: 2.5,
+    flex: 2,
   },
   harga: {
     fontSize: RFValue(22, heightMobileUI),
-    fontFamily: fonts.primary.light,
+    fontFamily: fonts.primary.bold,
     flex: 1,
     // alignSelf: 'center',
     textAlign: 'right',
-    color: 'mediumseagreen',
+    color: colors.green,
     // position: 'absolute',
     // right: 0,
     // top: 0

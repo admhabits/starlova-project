@@ -5,4 +5,5 @@ export const colors = {
     yellow: '#FFF6D5',
     border: '#C4C4C4',
     green: 'mediumseagreen',
+    darkgreen: 'darkseagreen',
 }

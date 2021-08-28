@@ -11,27 +11,27 @@ export default class JerseySlider extends Component {
     this.state = {
       openImage: false,
       previewImage: false,
+      index: 0,
     };
   }
+
+  getEachImages = () => this.props.images.map((val, key)=>({url: val, props: image }))
 
   clickPreview = (index) => {
     this.setState({
       openImage: true,
-      previewImage: [
-        {
-          url: this.props.images[index],
-          props: {
-            // Or you can set source directory.
-            source: this.props.images[index],
-          },
-        },
-      ],
+      index: index,
+      previewImage: this.getEachImages()
+      
     });
+
   };
+
 
   render() {
     const {images} = this.props;
-    const {openImage, previewImage} = this.state;
+    // console.warn(images)
+    const {openImage, previewImage, index} = this.state;
     return (
       <View>
         <SliderBox
@@ -40,7 +40,7 @@ export default class JerseySlider extends Component {
           sliderBoxHeight={responsiveHeight(430)}
           ImageComponentStyle={styles.jersey}
           dotStyle={styles.dotStyle}
-          dotColor={colors.secondary}
+          dotColor={colors.green}
           imageLoadingColor={colors.yellow}
           onCurrentImagePressed={(index) => this.clickPreview(index)}
         />
@@ -50,6 +50,7 @@ export default class JerseySlider extends Component {
             transparent={true} 
             onRequestClose={() => this.setState({openImage: true})}>
           <ImageViewer
+            index={index}
             imageUrls={previewImage}
             backgroundColor={colors.primary}
             onClick={() => this.setState({openImage: false})}
