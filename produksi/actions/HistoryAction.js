@@ -21,6 +21,7 @@ export const getListHistory = (uid) => {
       .ref('histories')
       .orderByChild('user')
       .equalTo(uid)
+      .limitToLast(100)
       .once('value', (querySnapshot) => {
         let data = querySnapshot.val();
 

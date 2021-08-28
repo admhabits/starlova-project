@@ -30,17 +30,31 @@ const CardKeranjang = ({keranjang, keranjangUtama, id, dispatch}) => {
 
         <Jarak height={responsiveHeight(14)}/>
 
-        <Text style={styles.textBold}>Pesan : {keranjang.jumlahPesan}</Text>
-        <Text style={styles.textBold}>Ukuran: {keranjang.ukuran}</Text>
-        <Text style={styles.textBold}>
-          Total Harga: Rp. {numberWithCommas(keranjang.totalHarga)}
-        </Text>
-        <Text style={styles.textBold}>Keterangan:</Text>
-        <Text style={styles.textBold}>{keranjang.keterangan} </Text>
+        <View style={styles.rowsCart}>
+          <Text style={styles.textBold}>Pesan : {keranjang.jumlahPesan}</Text>
+          <Text style={styles.textBold}>Ukuran : {keranjang.ukuran}</Text>
+        </View>
+        <View style={styles.rowsCart}>
+          <Text style={styles.textBold}>
+            Sub Total :
+          </Text>        
+          <Text style={styles.totalharga}>
+            Rp. {numberWithCommas(keranjang.totalHarga)}
+          </Text>
+        </View>
+
+        <View style={styles.notes}>
+          <Jarak height={responsiveHeight(10)}/>
+          <Text style={styles.textBold}>Notes :</Text>
+          <Jarak height={responsiveHeight(10)}/>
+          <Text style={styles.textLight}>{keranjang.keterangan} </Text>
+          <Jarak height={responsiveHeight(10)}/>
+        </View>
+
       </View>
 
       <TouchableOpacity style={styles.hapus} onPress={() => hapusKeranjang()}>
-        <IconHapus />
+        <IconHapus height={responsiveHeight(30)}/>
       </TouchableOpacity>
     </View>
   );
@@ -67,6 +81,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
   },
+
   gambar: {
     width: responsiveWidth(77),
     height: responsiveHeight(88),
@@ -74,12 +89,19 @@ const styles = StyleSheet.create({
   },
   hapus: {
     flex: 1,
-    alignItems: 'flex-end',
+    alignItems: 'center',
+    marginLeft: 10
   },
   nama: {
     fontFamily: fonts.primary.bold,
-    fontSize: 13,
-    textTransform: 'capitalize',
+    fontSize: 12,
+    textTransform: 'uppercase',
+    maxWidth: 300
+  },
+  totalharga: {
+    fontFamily: fonts.primary.bold,
+    fontSize: 11,
+    color: colors.green
   },
   text: {
     fontFamily: fonts.primary.regular,
@@ -89,4 +111,16 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primary.bold,
     fontSize: 11,
   },
+  textLight: {
+    fontFamily: fonts.primary.light,
+    fontSize: 11,
+  },
+  textSemibold: {
+    fontFamily: fonts.primary.semibold,
+    fontSize: 11,
+  },
+  rowsCart: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
 });

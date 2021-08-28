@@ -103,7 +103,7 @@ class Checkout extends Component {
 
     const data = {
       transaction_details: {
-        order_id: "TEST-"+date+"-"+profile.uid,
+        order_id: "PESAN-"+date+"-"+profile.uid,
         gross_amount: parseInt(totalHarga+ongkir)
       }, 
       credit_card: {

@@ -13,7 +13,7 @@ const ListHistory = ({
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         {getListHistoryResult ? (
-          Object.keys(getListHistoryResult).map((key) => {
+          Object.keys(getListHistoryResult).reverse().map((key) => {
             return (
               <CardHistory
                 pesanan={getListHistoryResult[key]}

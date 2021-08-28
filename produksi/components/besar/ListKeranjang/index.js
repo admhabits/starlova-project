@@ -12,7 +12,7 @@ const ListKeranjang = ({
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         {getListKeranjangResult ? (
-          Object.keys(getListKeranjangResult.pesanans).map((key) => {
+          Object.keys(getListKeranjangResult.pesanans).reverse().map((key) => {
             return (
               <CardKeranjang
                 keranjang={getListKeranjangResult.pesanans[key]}

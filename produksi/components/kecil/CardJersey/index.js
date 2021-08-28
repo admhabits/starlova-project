@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontFamily: fonts.primary.bold,
-        fontSize: 13,
+        fontSize: 10,
         textTransform: 'uppercase',
         textAlign: 'center',
         color: colors.primary

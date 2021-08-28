@@ -13,7 +13,7 @@ const ListJerseys = ({
   return (
     <View style={styles.container}>
       {getListJerseyResult ? (
-        Object.keys(getListJerseyResult).map((key) => {
+        Object.keys(getListJerseyResult).reverse().map((key) => {
           return (
             <CardJersey
               key={key}

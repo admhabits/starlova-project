@@ -18,8 +18,8 @@ export const ORIGIN_CITY = '349';
 export const HEADER_MIDTRANS = {
   Accept: 'application/json',
   'Content-Type': 'application/json',
-  Authorization: 'Basic U0ItTWlkLXNlcnZlci1zTFFDbHZjQXVXY1VRdElFVkpqQlhlSzU=',
+  Authorization: 'Basic TWlkLXNlcnZlci1EVUV0Yngtc2J5cDBJMzdpalBFc1UybUU=',
 };
 
-export const URL_MIDTRANS = 'https://app.sandbox.midtrans.com/snap/v1/';
-export const URL_MIDTRANS_STATUS = 'https://api.sandbox.midtrans.com/v2/';
+export const URL_MIDTRANS = 'https://app.midtrans.com/snap/v1/';
+export const URL_MIDTRANS_STATUS = 'https://api.midtrans.com/v2/';

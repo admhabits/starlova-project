@@ -142,7 +142,7 @@ class JerseyDetail extends Component {
               label="Keterangan"
               textarea
               fontSize={13}
-              placeholder="Isi formulir ini jika ingin minta dibuatkan Name Tag [ Nama dan Nomor Punggung ]"
+              placeholder="Contoh: Nama : Alam Wibowo, No. Punggung : 7"
               value={keterangan}
               onChangeText={(keterangan) => this.setState({keterangan})}
             />
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
   },
 
   nama: {
-    fontSize: RFValue(24, heightMobileUI),
+    fontSize: RFValue(22, heightMobileUI),
     fontFamily: fonts.primary.bold,
     textTransform: 'uppercase',
     color: colors.primary,
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
     flex: 2.5,
   },
   harga: {
-    fontSize: RFValue(24, heightMobileUI),
+    fontSize: RFValue(22, heightMobileUI),
     fontFamily: fonts.primary.light,
     flex: 1,
     // alignSelf: 'center',
