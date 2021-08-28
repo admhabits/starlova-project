@@ -1,8 +1,21 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Modal} from 'react-native';
+import {StyleSheet, View, Modal, Text} from 'react-native';
+import {
+  colors,
+  fonts,
+  responsiveHeight,
+  heightMobileUI,
+  responsiveWidth,
+} from '../../../utils';
+import {
+  Inputan,
+  Jarak,
+  Tombol
+} from '../../kecil';
+import {RFValue} from 'react-native-responsive-fontsize';
 import {SliderBox} from 'react-native-image-slider-box';
 import ImageViewer from 'react-native-image-zoom-viewer';
-import {responsiveHeight, colors, responsiveWidth} from '../../../utils';
+
 
 export default class JerseySlider extends Component {
   constructor(props) {
@@ -15,7 +28,12 @@ export default class JerseySlider extends Component {
     };
   }
 
-  getEachImages = () => this.props.images.map((val, key)=>({url: val, props: image }))
+  getEachImages = () => this.props.images.map((val, key)=>({
+    url: val, 
+    props: { 
+      source : val 
+    } 
+  }))
 
   clickPreview = (index) => {
     this.setState({
@@ -29,7 +47,7 @@ export default class JerseySlider extends Component {
 
 
   render() {
-    const {images} = this.props;
+    const {images, jersey} = this.props;
     // console.warn(images)
     const {openImage, previewImage, index} = this.state;
     return (
@@ -48,7 +66,9 @@ export default class JerseySlider extends Component {
         <Modal 
             visible={openImage} 
             transparent={true} 
-            onRequestClose={() => this.setState({openImage: true})}>
+            onRequestClose={() => this.setState({openImage: true})}
+            animationType="fade"
+            >
           <ImageViewer
             index={index}
             imageUrls={previewImage}
@@ -56,7 +76,16 @@ export default class JerseySlider extends Component {
             onClick={() => this.setState({openImage: false})}
             enableSwipeDown
             onSwipeDown={() => this.setState({openImage: false})}
+            saveToLocalByLongPress={false}
           />
+          
+          {/*<Text style={styles.badgeRight}>Berat {jersey.berat} Gram</Text>*/}
+
+          <View style={styles.container}>
+            <Text style={styles.badgeBottom}>Tipe {jersey.jenis}</Text>
+            <Text style={styles.badgeBottom}>Berat {jersey.berat} Gram</Text>         
+          </View>
+
         </Modal>
       </View>
     );
@@ -64,11 +93,39 @@ export default class JerseySlider extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.primary,
+    justifyContent: 'center',
+  },
+
   jersey: {
     marginTop: 25,
     width: responsiveWidth(344),
   },
   dotStyle: {
     marginTop: -60,
+  },
+  badgeRight: {
+    fontSize: RFValue(18, heightMobileUI),
+    fontFamily: fonts.primary.light,
+    position: 'absolute',
+    right: 10,
+    top: 10,
+    zIndex: 0,
+    color: colors.secondary,
+    justifyContent: 'center',
+    textTransform: 'uppercase',
+  },
+  badgeBottom: {
+    fontSize: RFValue(18, heightMobileUI),
+    fontFamily: fonts.primary.light,
+    textAlign: 'center',
+    position: 'relative',
+    bottom: responsiveHeight(100),
+
+    zIndex: 0,
+    color: colors.secondary,
+    textTransform: 'uppercase',
+
   },
 });

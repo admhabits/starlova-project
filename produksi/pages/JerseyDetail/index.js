@@ -90,10 +90,10 @@ class JerseyDetail extends Component {
             onPress={() => navigation.goBack()}
           />
         </View>
-        <JerseySlider images={images} />
+        <JerseySlider images={images} jersey={jersey}/>
         
-        <Text style={styles.badgeRight}>Berat : {jersey.berat} Gram</Text>
-        <Text style={styles.badgeLeft}>{jersey.jenis}</Text>
+{/*        <Text style={styles.badgeRight}>Berat : {jersey.berat} Gram</Text>
+        <Text style={styles.badgeLeft}>{jersey.jenis}</Text>*/}
         
         <View style={styles.container}>
           <View style={styles.liga}>
@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
   },
   button: {
     position: 'absolute',
-    marginTop: 50,
+    marginTop: 30,
     marginLeft: 30,
     zIndex: 1,
   },
@@ -225,28 +225,28 @@ const styles = StyleSheet.create({
     // top: 0
   },
 
-  badgeRight: {
-    fontSize: RFValue(18, heightMobileUI),
-    fontFamily: fonts.primary.light,
-    position: 'absolute',
-    right: 10,
-    top: 10,
-    zIndex: 10,
-    color: colors.secondary,
-    justifyContent: 'center',
-    textTransform: 'uppercase',
-  },
-  badgeLeft: {
-    fontSize: RFValue(18, heightMobileUI),
-    fontFamily: fonts.primary.light,
-    position: 'absolute',
-    left: 10,
-    top: 10,
-    zIndex: 10,
-    color: colors.secondary,
-    justifyContent: 'center',
-    textTransform: 'uppercase',
-  },
+  // badgeRight: {
+  //   fontSize: RFValue(18, heightMobileUI),
+  //   fontFamily: fonts.primary.light,
+  //   position: 'absolute',
+  //   right: 10,
+  //   top: 10,
+  //   zIndex: 10,
+  //   color: colors.secondary,
+  //   justifyContent: 'center',
+  //   textTransform: 'uppercase',
+  // },
+  // badgeLeft: {
+  //   fontSize: RFValue(18, heightMobileUI),
+  //   fontFamily: fonts.primary.light,
+  //   position: 'absolute',
+  //   left: 10,
+  //   top: 10,
+  //   zIndex: 10,
+  //   color: colors.secondary,
+  //   justifyContent: 'center',
+  //   textTransform: 'uppercase',
+  // },
   liga: {
     alignItems: 'flex-end',
     marginRight: 30,
