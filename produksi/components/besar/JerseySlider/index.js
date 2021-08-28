@@ -76,6 +76,8 @@ export default class JerseySlider extends Component {
             onClick={() => this.setState({openImage: false})}
             enableSwipeDown
             onSwipeDown={() => this.setState({openImage: false})}
+            pageAnimateTime={500}
+            renderHeader={()=><Text style={styles.header}>{jersey.nama}</Text>}
             saveToLocalByLongPress={false}
           />
           
@@ -96,6 +98,14 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.primary,
     justifyContent: 'center',
+  },
+
+  header: {
+    textAlign: 'center',
+    fontSize: RFValue(18, heightMobileUI),
+    fontFamily: fonts.primary.light,
+    color: colors.secondary,
+    marginTop: 10
   },
 
   jersey: {
