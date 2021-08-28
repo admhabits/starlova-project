@@ -29,16 +29,17 @@ const styles = StyleSheet.create({
         width: responsiveWidth(150),
         alignItems: 'center',
         padding: 10,
-        shadowColor: 'hsl(0, 0%, 80%)',
-        shadowOffset: {
-          width: 0,
-          height: 0,
-        },
-        shadowOpacity: 0.0,
-        shadowRadius: 2.0,
 
-        elevation: 5,
-        padding: 15,
+        // shadowColor: '#000',
+        // shadowOffset: {
+        //   width: 0,
+        //   height: 2,
+        // },
+        // shadowOpacity: 0.1,
+        // shadowRadius: 3.84,
+        // elevation: 5,
+        // padding: 10,
+
         borderRadius: 8,
         marginBottom: 5,
 

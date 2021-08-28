@@ -66,7 +66,7 @@ export default class JerseySlider extends Component {
         <Modal 
             visible={openImage} 
             transparent={true} 
-            onRequestClose={() => this.setState({openImage: true})}
+            onRequestClose={() => this.setState({openImage: false})}
             animationType="fade"
             >
           <ImageViewer

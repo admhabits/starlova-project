@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     marginHorizontal: 30,
-    borderRadius: 5,
+    borderRadius: 10,
     alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 15,

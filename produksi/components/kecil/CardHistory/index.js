@@ -95,12 +95,12 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.15,
+    shadowOpacity: 0.1,
     shadowRadius: 3.84,
 
     elevation: 5,
     padding: 15,
-    borderRadius: 5,
+    borderRadius: 10,
     marginBottom: 20,
   },
   history: {
@@ -124,12 +124,14 @@ const styles = StyleSheet.create({
   },
   nama: {
     fontSize: 13,
+    color: colors.primary,
     fontFamily: fonts.primary.bold,
     textTransform: 'capitalize',
   },
   harga: {
     fontSize: 12,
     fontFamily: fonts.primary.regular,
+    color: colors.primary,
   },
   footer: {
     flexDirection: 'row',
