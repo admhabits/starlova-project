@@ -11,7 +11,8 @@ import {Inputan, Pilihan, Tombol} from '../../components';
 import {connect} from 'react-redux';
 import {getKotaList, getProvinsiList} from '../../actions/RajaOngkirAction';
 import {DefaultImage} from '../../assets';
-import {launchImageLibrary} from 'react-native-image-picker';
+import { launchImageLibrary } from 'react-native-image-picker';
+import * as ImagePicker from 'expo-image-picker';
 import { updateProfile } from '../../actions/ProfileAction'
 
 class EditProfile extends Component {
@@ -36,6 +37,14 @@ class EditProfile extends Component {
   componentDidMount() {
     this.getUserData();
     this.props.dispatch(getProvinsiList());
+    (async () => {
+          if (Platform.OS !== 'web') {
+            const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+            if (status !== 'granted') {
+              alert('Sorry, we need camera roll permissions to make this work!');
+            }
+          }
+        })();
   }
 
   componentDidUpdate(prevProps) {
@@ -75,10 +84,19 @@ class EditProfile extends Component {
     this.props.dispatch(getKotaList(provinsi));
   };
 
+
+  // React Native Image Picker
   getImage = () => {
     launchImageLibrary(
-      {quality: 1, maxWidth: 500, maxHeight: 500, includeBase64: true, selectionLimit: 1, cameraType: 'front'},
+      { quality: 1, 
+        maxWidth: 500, 
+        maxHeight: 500, 
+        includeBase64: true, 
+        selectionLimit: 1, 
+        cameraType: 'front'
+      },
       (response) => {
+        console.log(response)
         if (response.didCancel || response.errorCode || response.errorMessage) {
           Alert.alert('Error', 'Maaf sepertinya anda tidak memilih fotonya');
         } else {
@@ -92,8 +110,28 @@ class EditProfile extends Component {
           });
         }
       },
-    );
+    )
   };
+
+  // Expo Image Picker
+ pickImage = async () => {
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      });
+
+      // console.log(result);
+
+      if (!result.cancelled) {
+         this.setState({
+           avatar: result.uri,
+           avatarForDB: result.uri,
+           updateAvatar: true
+         });
+      }
+    };
 
   onSubmit = () => {
     const {
@@ -178,7 +216,7 @@ class EditProfile extends Component {
                   title="Change Photo"
                   type="text"
                   padding={7}
-                  onPress={() => this.getImage()}
+                  onPress={() => this.pickImage()}
                 />
               </View>
             </View>
