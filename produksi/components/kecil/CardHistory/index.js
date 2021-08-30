@@ -23,6 +23,7 @@ class CardHistory extends Component {
   render() {
     const {pesanan, updateStatusLoading} = this.props;
     const history = pesanan.pesanans;
+    
     return (
       <TouchableOpacity style={updateStatusLoading ? (styles.container) : (styles.changeContainer(pesanan))} onPress={() => this.masukMidtrans()}>
         <Text style={styles.tanggal}>{pesanan.tanggal}</Text>
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
         }
       } else {
         // Sukses Payment Color
-        
+
         return {
            backgroundColor: colors.white,
            padding: 15,

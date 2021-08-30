@@ -1,17 +1,14 @@
 import React from 'react';
 import {ScrollView, StyleSheet, Text, View, ActivityIndicator, Image} from 'react-native';
-import {connect} from 'react-redux';
+import {connect, ReactReduxContext} from 'react-redux';
 import {colors, fonts, heightMobileUI} from '../../../utils';
 import { Empty } from '../../../assets';
 import {CardHistory} from '../../kecil';
 import {RFValue} from 'react-native-responsive-fontsize';
 
 
-const ListHistory = ({
-  getListHistoryLoading,
-  getListHistoryResult,
-  navigation,
-}) => {
+const ListHistory = ({ getListHistoryLoading, getListHistoryResult, navigation }) => {
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
