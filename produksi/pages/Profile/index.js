@@ -85,7 +85,16 @@ const styles = StyleSheet.create({
     height: responsiveWidth(150),
     borderRadius: 40,
     alignSelf: 'center',
-    marginTop: -responsiveWidth(75)
+    marginTop: -responsiveWidth(75),
+    
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    // elevation: 5,
   },
   profile: {
     marginTop: 10,

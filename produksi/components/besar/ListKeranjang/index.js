@@ -1,7 +1,9 @@
 import React from 'react';
-import {ActivityIndicator, StyleSheet, Text, View, ScrollView} from 'react-native';
-import {colors} from '../../../utils';
+import {ActivityIndicator, StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import {colors, fonts, heightMobileUI} from '../../../utils';
 import {CardKeranjang} from '../../kecil';
+import { Empty } from '../../../assets';
+import {RFValue} from 'react-native-responsive-fontsize';
 
 const ListKeranjang = ({
   getListKeranjangLoading,
@@ -29,7 +31,10 @@ const ListKeranjang = ({
         ) : getListKeranjangError ? (
           <Text>{getListKeranjangError}</Text>
         ) : (
-          <Text>Data Kosong</Text>
+          <View style={styles.emptyImage}>
+            <Image source={Empty} style={styles.empty}/>
+            <Text style={styles.textEmpty}>Data Kosong</Text>
+          </View>
         )}
       </View>
     </ScrollView>
@@ -44,7 +49,22 @@ const styles = StyleSheet.create({
   },
   loading: {
     flex: 1,
-    marginTop: 10,
-    marginBottom: 30,
+    alignSelf: 'center',
+    marginTop: 25,
+   
   },
+  emptyImage : {
+    alignItems: 'center',
+    marginTop: 25
+  },
+  empty: {
+    flex: 1,
+    width: 300,
+    height: 250
+  },
+  textEmpty: {
+    color: colors.primary,
+    fontFamily: fonts.primary.light,
+    fontSize: RFValue(28, heightMobileUI)
+  }
 });

@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         height: 124
     },
     text: {
-        fontFamily: fonts.primary.bold,
+        fontFamily: fonts.primary.semibold,
         fontSize: 10,
         textTransform: 'uppercase',
         textAlign: 'center',
