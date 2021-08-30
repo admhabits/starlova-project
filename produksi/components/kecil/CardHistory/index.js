@@ -90,16 +90,18 @@ export default connect(mapStateToProps, null)(CardHistory);
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 3.84,
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 2,
+    // },
+    // shadowOpacity: 0.1,
+    // shadowRadius: 3.84,
 
-    elevation: 5,
+    // elevation: 5,
     padding: 15,
+    borderWidth: 1,
+    borderStyle: 'dashed',
     borderRadius: 10,
     marginBottom: 20,
   },
