@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View, ScrollView, Image, Alert, StatusBar} from 'react-native';
+import {Text, StyleSheet, View, ScrollView, Image, Alert, /*StatusBar*/} from 'react-native';
 import {
   colors,
   fonts,
@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     paddingHorizontal: 30,
     paddingTop: 10,
-    marginTop: StatusBar.currentHeight
+    // marginTop: StatusBar.currentHeight
   },
   inputFoto: {
     marginTop: 20,
