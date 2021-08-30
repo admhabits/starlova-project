@@ -1,8 +1,11 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View, ActivityIndicator} from 'react-native';
+import {ScrollView, StyleSheet, Text, View, ActivityIndicator, Image} from 'react-native';
 import {connect} from 'react-redux';
-import {colors} from '../../../utils';
+import {colors, fonts, heightMobileUI} from '../../../utils';
+import { Empty } from '../../../assets';
 import {CardHistory} from '../../kecil';
+import {RFValue} from 'react-native-responsive-fontsize';
+
 
 const ListHistory = ({
   getListHistoryLoading,
@@ -28,7 +31,10 @@ const ListHistory = ({
             <ActivityIndicator size="large" color={colors.primary} />
           </View>
         ) : (
-          <Text>Data Kosong</Text>
+          <View style={styles.emptyImage}>
+            <Image source={Empty} style={styles.empty}/>
+            <Text style={styles.textEmpty}>Data Kosong</Text>
+          </View>
         )}
       </View>
     </ScrollView>
@@ -52,4 +58,18 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 50,
   },
+  emptyImage : {
+    alignItems: 'center',
+    marginTop: 25
+  },
+  empty: {
+    flex: 1,
+    width: 300,
+    height: 250
+  },
+  textEmpty: {
+    color: colors.primary,
+    fontFamily: fonts.primary.semibold,
+    fontSize: RFValue(25, heightMobileUI)
+  }
 });
