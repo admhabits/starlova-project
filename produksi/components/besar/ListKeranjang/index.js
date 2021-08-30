@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   textEmpty: {
     color: colors.primary,
-    fontFamily: fonts.primary.light,
-    fontSize: RFValue(28, heightMobileUI)
+    fontFamily: fonts.primary.semibold,
+    fontSize: RFValue(25, heightMobileUI)
   }
 });

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View, StatusBar} from 'react-native';
+import {Text, StyleSheet, View, /*StatusBar*/} from 'react-native';
 import {dummyPesanans} from '../../data';
 import {ListKeranjang, Tombol} from '../../components';
 import {
@@ -55,9 +55,11 @@ class Keranjang extends Component {
             <Text style={styles.textBold}>Total Harga :</Text>
             <Text style={styles.textBold}>
               Rp.{' '}
-              {getListKeranjangResult
+              {
+                getListKeranjangResult
                 ? numberWithCommas(getListKeranjangResult.totalHarga)
-                : 0}
+                : 0
+              }
             </Text>
           </View>
 
@@ -108,7 +110,7 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: colors.white,
-    marginTop: StatusBar.currentHeight
+    // marginTop: StatusBar.currentHeight
   },
   footer: {
     paddingHorizontal: 30,
@@ -118,7 +120,7 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.30,
     shadowRadius: 6.84,
     elevation: 11,
     paddingBottom: 30,
@@ -130,6 +132,8 @@ const styles = StyleSheet.create({
   },
   textBold: {
     fontSize: 20,
-    fontFamily: fonts.primary.bold,
+    fontFamily: fonts.primary.semibold,
+    color: colors.primary
+
   },
 });

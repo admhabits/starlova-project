@@ -23,34 +23,40 @@ const CardKeranjang = ({keranjang, keranjangUtama, id, dispatch}) => {
       <Image source={{ uri : keranjang.product.gambar[0]}} style={styles.gambar} />
 
       <View style={styles.desc}>
-        <Text style={styles.nama}>{keranjang.product.nama}</Text>
-        <Text style={styles.harga}>
-          Rp. {numberWithCommas(keranjang.product.harga)}
-        </Text>
+        
 
-        <Jarak height={responsiveHeight(14)}/>
-
-        <View style={styles.rowsCart}>
-          <Text style={styles.textBold}>Pesan : {keranjang.jumlahPesan}</Text>
-          <Text style={styles.textBold}>Ukuran : {keranjang.ukuran}</Text>
-        </View>
-        <View style={styles.rowsCart}>
-          <Text style={styles.textBold}>
-            Sub Harga Total :
-          </Text>        
-          <Text style={styles.totalharga}>
-            Rp. {numberWithCommas(keranjang.totalHarga)}
+        <View>
+          <Text style={styles.nama}>{keranjang.product.nama}</Text>
+          <Text style={styles.harga}>
+            Rp. {numberWithCommas(keranjang.product.harga)}
           </Text>
-        </View>
+          <Jarak height={responsiveHeight(14)}/>
 
-        <View style={styles.notes}>
-          <Jarak height={responsiveHeight(10)}/>
-          <Text style={styles.textBold}>Keterangan :</Text>
-          <Jarak height={responsiveHeight(10)}/>
-          <Text style={styles.textLight}>{keranjang.keterangan} </Text>
-          <Jarak height={responsiveHeight(10)}/>
+          <View style={styles.rowsCart}>
+            <Text style={styles.textBold}>Ukuran : </Text>
+            <Text style={styles.textBold}>{keranjang.ukuran}</Text>
+          </View>
+          <View style={styles.rowsCart}>
+            <Text style={styles.textBold}>
+              Sub Total Harga :
+            </Text>        
+            <Text style={styles.totalharga}>
+              Rp. {numberWithCommas(keranjang.totalHarga)}
+            </Text>
+          </View>
+          <View style={styles.rowsCart}>
+            <Text style={styles.textBold}>Total Pesan : </Text>
+            <Text style={styles.textBold}>{keranjang.jumlahPesan}</Text>
+          </View>
+          <View style={styles.notes}>
+            <Jarak height={responsiveHeight(10)}/>
+            <Text style={styles.textBold}>Keterangan :</Text>
+            <Jarak height={responsiveHeight(2)}/>
+            <Text style={styles.textLight}>{keranjang.keterangan} </Text>
+            <Jarak height={responsiveHeight(10)}/>
+          </View>
         </View>
-
+ 
       </View>
 
       <TouchableOpacity style={styles.hapus} onPress={() => hapusKeranjang()}>
@@ -67,19 +73,26 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 15,
     backgroundColor: colors.white,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.15,
-    shadowRadius: 3.84,
-    elevation: 5,
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 2,
+    // },
+    // shadowOpacity: 0.15,
+    // shadowRadius: 3.84,
+    // elevation: 5,
     marginHorizontal: 30,
+    borderColor: 'dodgerblue',
+    borderWidth: 1,
     borderRadius: 10,
+    borderStyle: 'dashed',
     alignItems: 'center',
     paddingVertical: 10,
-    paddingHorizontal: 15,
+    paddingHorizontal: 20,
+  },
+
+  desc : {
+    maxWidth: 300
   },
 
   gambar: {
@@ -90,25 +103,29 @@ const styles = StyleSheet.create({
   hapus: {
     flex: 1,
     alignItems: 'center',
-    marginLeft: 10
+    marginLeft: 10,
+    position: 'absolute',
+    right: 10,
+    bottom: 10,
   },
   nama: {
     fontFamily: fonts.primary.bold,
     fontSize: 12,
     textTransform: 'uppercase',
-    maxWidth: 300,
+    width: 225,
     color: colors.primary
   },
 
    harga: {
+
     fontFamily: fonts.primary.regular,
     fontSize: 11,
-    color: colors.primary
+    color: colors.dodgerblue
   },
   totalharga: {
     fontFamily: fonts.primary.light,
     fontSize: 11,
-    color: colors.green
+    color: colors.dodgerblue
   },
   text: {
     fontFamily: fonts.primary.regular,
@@ -122,12 +139,14 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primary.light,
     fontSize: 11,
   },
+
   textSemibold: {
     fontFamily: fonts.primary.semibold,
     fontSize: 11,
   },
   rowsCart: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
-  }
+    justifyContent: 'space-between',
+  },
+
 });

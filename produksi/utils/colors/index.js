@@ -6,4 +6,5 @@ export const colors = {
     border: '#C4C4C4',
     green: 'mediumseagreen',
     darkgreen: 'darkseagreen',
+    dodgerblue: 'dodgerblue'
 }
