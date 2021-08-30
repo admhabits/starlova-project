@@ -130,9 +130,9 @@ const styles = StyleSheet.create({
     color: colors.primary
   },
   totalharga: {
-    fontFamily: fonts.primary.regular,
+    fontFamily: fonts.primary.bold,
     fontSize: 11,
-    color: colors.dodgerblue
+    color: colors.salmon
   },
   text: {
     fontFamily: fonts.primary.regular,
