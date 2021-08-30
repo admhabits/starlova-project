@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View, Alert, StatusBar} from 'react-native';
+import {Text, StyleSheet, View, Alert, /*StatusBar*/} from 'react-native';
 import {connect} from 'react-redux';
 import {CardAlamat, Jarak, Pilihan, Tombol} from '../../components';
 import {
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     paddingTop: 30,
     justifyContent: 'space-between',
-    marginTop: StatusBar.currentHeight
+    // marginTop: StatusBar.currentHeight
   },
   isi: {
     paddingHorizontal: 30,

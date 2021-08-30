@@ -7,7 +7,7 @@ import {updateStatus} from '../../../actions/HistoryAction';
 
 class CardHistory extends Component {
   componentDidMount() {
-    const {pesanan} = this.props;
+    const { pesanan } = this.props;
     this.props.dispatch(updateStatus(pesanan.order_id));
   }
 
@@ -24,7 +24,7 @@ class CardHistory extends Component {
     const {pesanan, updateStatusLoading} = this.props;
     const history = pesanan.pesanans;
     return (
-      <TouchableOpacity style={styles.changeContainer(pesanan)} onPress={() => this.masukMidtrans()}>
+      <TouchableOpacity style={updateStatusLoading ? (styles.container) : (styles.changeContainer(pesanan))} onPress={() => this.masukMidtrans()}>
         <Text style={styles.tanggal}>{pesanan.tanggal}</Text>
         {Object.keys(history).map((key, index) => {
           return (
@@ -88,6 +88,15 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, null)(CardHistory);
 
 const styles = StyleSheet.create({
+  container : {
+    backgroundColor: colors.white,
+    padding: 15,
+    borderWidth: 1,
+    borderStyle: 'dashed',
+    borderRadius: 10,
+    borderColor: colors.border,
+    marginBottom: 20,
+  },
   changeContainer: (data) => {
     if(data.status === "pending"){
       return {
