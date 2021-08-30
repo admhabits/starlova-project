@@ -30,12 +30,16 @@ const CardKeranjang = ({keranjang, keranjangUtama, id, dispatch}) => {
           <Text style={styles.harga}>
             Rp. {numberWithCommas(keranjang.product.harga)}
           </Text>
+
           <Jarak height={responsiveHeight(14)}/>
 
           <View style={styles.rowsCart}>
             <Text style={styles.textBold}>Ukuran : </Text>
             <Text style={styles.textBold}>{keranjang.ukuran}</Text>
           </View>
+
+          <Jarak height={responsiveHeight(2)}/>
+
           <View style={styles.rowsCart}>
             <Text style={styles.textBold}>
               Sub Total Harga :
@@ -44,6 +48,9 @@ const CardKeranjang = ({keranjang, keranjangUtama, id, dispatch}) => {
               Rp. {numberWithCommas(keranjang.totalHarga)}
             </Text>
           </View>
+
+          <Jarak height={responsiveHeight(2)}/>
+
           <View style={styles.rowsCart}>
             <Text style={styles.textBold}>Total Pesan : </Text>
             <Text style={styles.textBold}>{keranjang.jumlahPesan}</Text>
@@ -118,12 +125,12 @@ const styles = StyleSheet.create({
 
    harga: {
 
-    fontFamily: fonts.primary.regular,
+    fontFamily: fonts.primary.semibold,
     fontSize: 11,
-    color: colors.dodgerblue
+    color: colors.primary
   },
   totalharga: {
-    fontFamily: fonts.primary.light,
+    fontFamily: fonts.primary.regular,
     fontSize: 11,
     color: colors.dodgerblue
   },
@@ -147,6 +154,7 @@ const styles = StyleSheet.create({
   rowsCart: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    width: 225.
   },
 
 });
