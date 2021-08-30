@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Alert, StyleSheet, View, StatusBar} from 'react-native';
+import {Alert, StyleSheet, View, /*StatusBar*/} from 'react-native';
 import {colors, getData, responsiveHeight} from '../../utils';
 import {Inputan, Tombol} from '../../components';
 import {connect} from 'react-redux';
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingTop: 10,
     justifyContent: 'space-between',
-    marginTop: StatusBar.currentHeight
+    // marginTop: StatusBar.currentHeight
   },
   submit: {
     marginVertical: 30,
