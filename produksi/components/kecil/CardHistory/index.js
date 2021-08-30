@@ -24,7 +24,7 @@ class CardHistory extends Component {
     const {pesanan, updateStatusLoading} = this.props;
     const history = pesanan.pesanans;
     return (
-      <TouchableOpacity style={styles.container} onPress={() => this.masukMidtrans()}>
+      <TouchableOpacity style={styles.changeContainer(pesanan)} onPress={() => this.masukMidtrans()}>
         <Text style={styles.tanggal}>{pesanan.tanggal}</Text>
         {Object.keys(history).map((key, index) => {
           return (
@@ -40,12 +40,12 @@ class CardHistory extends Component {
                   Rp. {numberWithCommas(history[key].product.harga)}
                 </Text>
 
-                <Jarak height={10} />
+                <Jarak height={5} />
 
                 <Text style={styles.textBold}>
-                  Pesan : {history[key].jumlahPesan}
+                  Total Pesan : {history[key].jumlahPesan}
                 </Text>
-                <Text style={styles.textBold}>
+                <Text style={styles.textLight}>
                   Total Harga : Rp. {numberWithCommas(history[key].totalHarga)}
                 </Text>
               </View>
@@ -65,13 +65,13 @@ class CardHistory extends Component {
           </View>
 
           <View style={styles.label}>
-            <Text style={styles.textBlue}>
+            <Text style={styles.changeColor(pesanan)}>
               {updateStatusLoading ? 'Loading' : pesanan.status}
             </Text>
-            <Text style={styles.textBlue}>
+            <Text style={styles.textBlueLight}>
               Rp. {numberWithCommas(pesanan.ongkir)}
             </Text>
-            <Text style={styles.textBlue}>
+            <Text style={styles.textBlueLight}>
               Rp. {numberWithCommas(pesanan.totalHarga + pesanan.ongkir)}
             </Text>
           </View>
@@ -88,23 +88,30 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, null)(CardHistory);
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.white,
-    // shadowColor: '#000',
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 2,
-    // },
-    // shadowOpacity: 0.1,
-    // shadowRadius: 3.84,
-
-    // elevation: 5,
-    padding: 15,
-    borderWidth: 1,
-    borderStyle: 'dashed',
-    borderRadius: 10,
-    marginBottom: 20,
+  changeContainer: (data) => {
+    if(data.status === "pending"){
+      return {
+        backgroundColor: colors.white,
+        padding: 15,
+        borderWidth: 1,
+        borderStyle: 'dashed',
+        borderRadius: 10,
+        borderColor: colors.salmon,
+        marginBottom: 20,
+      }
+    } else {
+      return {
+         backgroundColor: colors.white,
+         padding: 15,
+         borderWidth: 1,
+         borderStyle: 'dashed',
+         borderColor: colors.green,
+         borderRadius: 10,
+         marginBottom: 20,
+      }
+    }
   },
+
   history: {
     flexDirection: 'row',
     marginTop: 10,
@@ -115,12 +122,18 @@ const styles = StyleSheet.create({
   },
   tanggal: {
     fontSize: 14,
-    fontFamily: fonts.primary.bold,
+    fontFamily: fonts.primary.semibold,
   },
   textBold: {
     fontSize: 11,
     fontFamily: fonts.primary.bold,
   },
+
+  textLight: {
+    fontSize: 11,
+    fontFamily: fonts.primary.light,
+  },
+
   desc: {
     marginLeft: responsiveWidth(7),
   },
@@ -142,10 +155,38 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   textBlue: {
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: fonts.primary.bold,
     color: colors.primary,
-    textTransform: 'uppercase',
+    textTransform: 'capitalize',
+    textAlign: 'right',
+  },
+
+  changeColor: (data) => {
+    if(data.status === "pending"){
+      return {
+            fontSize: 13,
+            fontFamily: fonts.primary.semibold,
+            color: colors.salmon,
+            textTransform: 'capitalize',
+            textAlign: 'right',
+      }
+    } else {
+      return {
+        fontSize: 13,
+        fontFamily: fonts.primary.semibold,
+        color: colors.green,
+        textTransform: 'capitalize',
+        textAlign: 'right',
+      }
+    }
+  },
+
+  textBlueLight: {
+    fontSize: 13,
+    fontFamily: fonts.primary.semibold,
+    color: colors.primary,
+    textTransform: 'capitalize',
     textAlign: 'right',
   },
 });
