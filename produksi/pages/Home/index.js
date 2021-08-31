@@ -41,6 +41,7 @@ class Home extends Component {
 
           <View style={styles.pilihJersey}>
             <Text style={styles.label}>
+
               Pilih <Text style={styles.boldLabel}>Jersey</Text> Yang Anda
               Inginkan
             </Text>
@@ -59,6 +60,12 @@ class Home extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  getListLigaLoading: state.LigaReducer.getListLigaLoading,
+  getListLigaResult: state.LigaReducer.getListLigaResult,
+  getListLigaError: state.LigaReducer.getListLigaError,
+});
 
 export default connect()(Home)
 

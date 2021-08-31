@@ -2,6 +2,28 @@ import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import { colors, fonts, responsiveWidth } from '../../../utils';
 import Tombol from '../Tombol';
+import { Placeholder, PlaceholderMedia, PlaceholderLine, Fade } from 'rn-placeholder';
+
+export const JerseyHolder = () => {
+    const dataHolder = ["1", "3", "4", "5", "6", "7"];
+    return (
+        <Placeholder Animation={Fade}>
+            <View style={styles.cardHolderContainer}>
+               { dataHolder.map((value, key)=>(
+                    <View styles={styles.cardholder} key={key}>
+                        <PlaceholderMedia size={responsiveWidth(100)} />
+                        <View style={styles.textHolder}>
+                            <PlaceholderLine width={80}/>
+                            <PlaceholderLine width={50}/>
+                        </View>
+                    </View>
+                ))
+               }
+            </View>
+        </Placeholder>
+
+    )
+}
 
 const CardJersey = ({jersey, navigation}) => {
   return (
@@ -24,25 +46,27 @@ const styles = StyleSheet.create({
     container: {
         marginBottom: 25
     },
+    cardHolderContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        marginBottom: 25,
+    },
     card: {
         backgroundColor: colors.yellow,
         width: responsiveWidth(150),
         alignItems: 'center',
         padding: 10,
-
-        // shadowColor: '#000',
-        // shadowOffset: {
-        //   width: 0,
-        //   height: 2,
-        // },
-        // shadowOpacity: 0.1,
-        // shadowRadius: 3.84,
-        // elevation: 5,
-        // padding: 10,
-
         borderRadius: 8,
         marginBottom: 5,
 
+    },
+    cardHolder: {
+        width: responsiveWidth(150),
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 8,
+        marginBottom: 5,
     },
     gambar: {
         width: 124,
@@ -54,5 +78,11 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase',
         textAlign: 'center',
         color: colors.primary
-    }
+    },
+
+    textHolder : {
+        marginTop: 10,
+        textAlign: 'center',
+    },
+
 });

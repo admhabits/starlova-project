@@ -122,16 +122,28 @@ const styles = StyleSheet.create({
         }
       } else {
         // Sukses Payment Color
+        if(data.status === "deny"){
+            return {
+               backgroundColor: colors.white,
+               padding: 15,
+               borderWidth: 1.5,
+               borderStyle: 'dashed',
+               borderColor: colors.border,
+               borderRadius: 10,
+               marginBottom: 20,
+            }
+          } else {
 
-        return {
-           backgroundColor: colors.white,
-           padding: 15,
-           borderWidth: 1.5,
-           borderStyle: 'dashed',
-           borderColor: colors.green,
-           borderRadius: 10,
-           marginBottom: 20,
-        }
+            return {
+               backgroundColor: colors.white,
+               padding: 15,
+               borderWidth: 1.5,
+               borderStyle: 'dashed',
+               borderColor: colors.green,
+               borderRadius: 10,
+               marginBottom: 20,
+            }
+          }
       }
     }
 
@@ -215,13 +227,24 @@ const styles = StyleSheet.create({
         }
       } else {
         // Sukses Payment Color
-        return {
-          fontSize: 13,
-          fontFamily: fonts.primary.semibold,
-          color: colors.green,
-          textTransform: 'capitalize',
-          textAlign: 'right',
-        }
+        if(data.status === "deny"){
+            return {
+              fontSize: 13,
+              fontFamily: fonts.primary.semibold,
+              color: colors.border,
+              textTransform: 'capitalize',
+              textAlign: 'right',
+            }
+          } else {
+
+            return {
+              fontSize: 13,
+              fontFamily: fonts.primary.semibold,
+              color: colors.green,
+              textTransform: 'capitalize',
+              textAlign: 'right',
+            }
+          }
       }
     }
   },

@@ -1,8 +1,8 @@
 import React from 'react';
-import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
+import {/*ActivityIndicator*/ StyleSheet, Text, View} from 'react-native';
 import {connect} from 'react-redux';
 import { colors } from '../../../utils';
-import {CardLiga} from '../../kecil';
+import {CardLiga, LigaPlaceholder} from '../../kecil';
 
 const ListLiga = ({getListLigaLoading, getListLigaResult, getListLigaError, navigation}) => {
   return (
@@ -13,7 +13,8 @@ const ListLiga = ({getListLigaLoading, getListLigaResult, getListLigaError, navi
         })
       ) : getListLigaLoading ? (
         <View style={styles.loading}>
-            <ActivityIndicator color={colors.primary} />
+          {/*<ActivityIndicator color={colors.primary} />*/}
+            <LigaPlaceholder/>
         </View>
       ) : getListLigaError ? (
         <Text>{getListLigaError}</Text>
@@ -40,7 +41,8 @@ const styles = StyleSheet.create({
   },
   loading: {
       flex: 1,
-      marginTop: 10,
-      marginBottom: 30
-  }
+      // marginTop: 10,
+      // marginBottom: 30
+  },
+ 
 });

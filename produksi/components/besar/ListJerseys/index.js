@@ -2,7 +2,7 @@ import React from 'react';
 import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 import {connect} from 'react-redux';
 import {colors} from '../../../utils';
-import {CardJersey} from '../../kecil';
+import {CardJersey, JerseyHolder } from '../../kecil';
 
 const ListJerseys = ({
   getListJerseyLoading,
@@ -24,7 +24,8 @@ const ListJerseys = ({
         })
       ) : getListJerseyLoading ? (
         <View style={styles.loading}>
-          <ActivityIndicator color={colors.primary} />
+          {/*<ActivityIndicator color={colors.primary} />*/}
+          <JerseyHolder/>
         </View>
       ) : getListJerseyError ? (
         <Text>{getListJerseyError}</Text>
@@ -51,9 +52,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   loading: {
-    flex: 1,
-    marginTop: 10,
-    marginBottom: 30,
+   flex: 1,
+    // marginTop: 10,
+    // marginBottom: 30,
     zIndex: 20
   },
 });
