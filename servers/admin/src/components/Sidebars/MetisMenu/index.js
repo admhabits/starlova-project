@@ -21,25 +21,25 @@ export default function MetisMenu(){
 				</a>
 				<ul className='mm-collapse mm-show'>
 					<li> 
-						<Link to="/products">
+						<Link to="/tambah">
 							<i className="bx bx-right-arrow-alt"></i>Tambah Produk
 						</Link>
 					</li>
 					<li> 
-						<Link to="/tambah">
+						<Link to="/products">
 							<i className="bx bx-right-arrow-alt"></i>Semua Produk
 						</Link>
 					</li>
 				</ul>
 			</li>
 			<li>
-				<a href='#' className="has-arrow" aria-expanded={false}>
+				<a href='#' className="has-arrow">
 					<div className="parent-icon">
 						<i className="bx bx-cart"></i>
 					</div>
 					<div className="menu-title">Manage Orders</div>
 				</a>
-				<ul className='mm-collapse mm-hide'>
+				<ul>
 					<li> 
 						<Link to="/orders">
 							<i className="bx bx-right-arrow-alt"></i>Semua Pesanan
