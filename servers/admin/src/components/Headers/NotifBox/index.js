@@ -9,7 +9,7 @@ export default function NotifBox({open, setOpen}){
 				role="button" 
 				data-bs-toggle="dropdown" 
 				aria-expanded="false"
-				onClick={()=>setOpen(!open)}
+				onClick={()=>setOpen()}
 			>
 				<span className="alert-count">3</span>
 				<i className='bx bx-bell'></i>

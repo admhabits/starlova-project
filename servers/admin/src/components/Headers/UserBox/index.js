@@ -5,7 +5,7 @@ export default function UserBox({open, setOpen}){
 	return (
 		<>
 			<div 
-				onClick={()=>setOpen(!open)}
+				onClick={()=>setOpen()}
 				className="d-flex align-items-center nav-link dropdown-toggle-nocaret" 
 				role="button" 
 				aria-expanded="false"

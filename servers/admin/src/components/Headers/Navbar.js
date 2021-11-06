@@ -15,7 +15,7 @@ export default function Navbar(){
 	const [ toggle, setToggle ] = React.useState(initState);
 	const setMenuBox = () => {
 		setToggle({
-			menuBox: true,
+			menuBox: !toggle.menuBox,
 			notifBox: false,
 			userBox: false,
 			messageBox: false
@@ -25,7 +25,7 @@ export default function Navbar(){
 	const setNotifBox = () => {
 		setToggle({
 			menuBox: false,
-			notifBox: true,
+			notifBox: !toggle.notifBox,
 			userBox: false,
 			messageBox: false
 		})
@@ -36,7 +36,7 @@ export default function Navbar(){
 			menuBox: false,
 			notifBox: false,
 			userBox: false,
-			messageBox: true
+			messageBox: !toggle.messageBox
 		})
 	};
 
@@ -44,7 +44,7 @@ export default function Navbar(){
 		setToggle({
 			menuBox: false,
 			notifBox: false,
-			userBox: true,
+			userBox: !toggle.userBox,
 			messageBox: false
 		})
 	};

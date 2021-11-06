@@ -9,7 +9,7 @@ export default function MenuBox({open, setOpen}){
 				role="button" 
 				data-bs-toggle="dropdown" 
 				aria-expanded="false"
-				onClick={()=>setOpen(!open)}
+				onClick={()=>setOpen()}
 			>
 				<i className='bx bx-category'></i>
 			</div>
