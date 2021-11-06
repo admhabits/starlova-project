@@ -26,13 +26,11 @@
     <link rel="canonical" href="/">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>Starlova Admin</title>
+    <title>StarLova Admin</title>
   </head>
   <body class="bg-theme bg-theme9">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!-- Bootstrap JS -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!--plugins-->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
@@ -48,12 +46,12 @@
         });
       });
     </script>
-    <script src="assets/js/chart.js"></script>
+    <script defer src="assets/js/chart.js"></script>
     <!--app JS-->
-    <script src="assets/js/app.js"></script>
-    <script>
+    <script async src="assets/js/app.js"></script>
+   <!--  <script>
       new PerfectScrollbar('.product-list');
       new PerfectScrollbar('.customers-list');
-    </script>
+    </script> -->
   </body>
 </html>

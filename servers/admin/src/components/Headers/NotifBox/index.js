@@ -2,13 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function NotifBox(){
+	const [show, setShow] = React.useState(false);
 	return (
 		<>
-			<Link className="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			<div 
+				className="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative"
+				role="button" 
+				data-bs-toggle="dropdown" 
+				aria-expanded="false"
+				onClick={()=>setShow(!show)}
+			>
 				<span className="alert-count">3</span>
 				<i className='bx bx-bell'></i>
-			</Link>
-			<div className="dropdown-menu dropdown-menu-end">
+			</div>
+			<div className={`dropdown-menu dropdown-menu-end ${ show ? 'show' : ''}`}>
 				<Link to="#">
 					<div className="msg-header">
 						<p className="msg-header-title">Notifications</p>

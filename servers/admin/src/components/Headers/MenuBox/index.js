@@ -2,11 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function MenuBox(){
+	const [show, setShow] = React.useState(false);
 	return (
 		<>
-			<Link className="nav-link dropdown-toggle dropdown-toggle-nocaret" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">	<i className='bx bx-category'></i>
-			</Link>
-			<div className="dropdown-menu dropdown-menu-end">
+			<div 
+				className="nav-link dropdown-toggle dropdown-toggle-nocaret" 
+				role="button" 
+				data-bs-toggle="dropdown" 
+				aria-expanded="false"
+				onClick={()=>setShow(!show)}
+			>
+				<i className='bx bx-category'></i>
+			</div>
+			<div className={`dropdown-menu dropdown-menu-end ${ show ? 'show' : ''}`}>
 				<div className="row row-cols-3 g-3 p-3">
 					<div className="col text-center">
 						<div className="app-box mx-auto"><i className='bx bx-group'></i>
