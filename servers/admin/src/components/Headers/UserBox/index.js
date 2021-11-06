@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function UserBox(){
-	const [show, setShow] = React.useState(false);
+export default function UserBox({open, setOpen}){
 	return (
 		<>
 			<div 
-				onClick={()=>setShow(!show)}
+				onClick={()=>setOpen(!open)}
 				className="d-flex align-items-center nav-link dropdown-toggle-nocaret" 
 				role="button" 
 				aria-expanded="false"
@@ -17,7 +16,7 @@ export default function UserBox(){
 					<p className="designattion mb-0">Seller Level 1</p>
 				</div>
 			</div>
-			<ul className={`dropdown-menu dropdown-menu-end ${ show ? 'show' : ''}`}>
+			<ul className={`dropdown-menu dropdown-menu-end ${ open ? 'show' : ''}`}>
 				<li><Link className="dropdown-item" to="#"><i className="bx bx-user"></i><span>Profile</span></Link>
 				</li>
 				<li><Link className="dropdown-item" to="#"><i className="bx bx-cog"></i><span>Pengaturan</span></Link>

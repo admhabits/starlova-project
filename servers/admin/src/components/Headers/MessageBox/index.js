@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function MessageBox(){
-	const [show, setShow] = React.useState(false);
+export default function MessageBox({open, setOpen}){
 	return (
 		<>
 			<div 
@@ -10,12 +9,12 @@ export default function MessageBox(){
 				role="button" 
 				data-bs-toggle="dropdown" 
 				aria-expanded="false"
-				onClick={()=>setShow(!show)}
+				onClick={()=>setOpen(!open)}
 			> 
 				<span className="alert-count">4</span>
 				<i className='bx bx-comment'></i>
 			</div>
-			<div className={`dropdown-menu dropdown-menu-end ${ show ? 'show' : ''}`}>
+			<div className={`dropdown-menu dropdown-menu-end ${ open ? 'show' : ''}`}>
 				<Link to="#">
 					<div className="msg-header">
 						<p className="msg-header-title">Messages</p>

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function MenuBox(){
-	const [show, setShow] = React.useState(false);
+export default function MenuBox({open, setOpen}){
 	return (
 		<>
 			<div 
@@ -10,11 +9,11 @@ export default function MenuBox(){
 				role="button" 
 				data-bs-toggle="dropdown" 
 				aria-expanded="false"
-				onClick={()=>setShow(!show)}
+				onClick={()=>setOpen(!open)}
 			>
 				<i className='bx bx-category'></i>
 			</div>
-			<div className={`dropdown-menu dropdown-menu-end ${ show ? 'show' : ''}`}>
+			<div className={`dropdown-menu dropdown-menu-end ${ open ? 'show' : ''}`}>
 				<div className="row row-cols-3 g-3 p-3">
 					<div className="col text-center">
 						<div className="app-box mx-auto"><i className='bx bx-group'></i>

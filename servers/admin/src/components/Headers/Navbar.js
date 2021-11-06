@@ -6,6 +6,48 @@ import NotifBox from './NotifBox';
 import MessageBox from './MessageBox';
 
 export default function Navbar(){
+	const initState = {
+		menuBox: false,
+		notifBox: false,
+		userBox: false,
+		messageBox: false
+	};
+	const [ toggle, setToggle ] = React.useState(initState);
+	const setMenuBox = () => {
+		setToggle({
+			menuBox: true,
+			notifBox: false,
+			userBox: false,
+			messageBox: false
+		})
+	};
+
+	const setNotifBox = () => {
+		setToggle({
+			menuBox: false,
+			notifBox: true,
+			userBox: false,
+			messageBox: false
+		})
+	};
+
+	const setMessageBox = () => {
+		setToggle({
+			menuBox: false,
+			notifBox: false,
+			userBox: false,
+			messageBox: true
+		})
+	};
+
+	const setUserBox = () => {
+		setToggle({
+			menuBox: false,
+			notifBox: false,
+			userBox: true,
+			messageBox: false
+		})
+	};
 	return (
 		<nav className="navbar navbar-expand">
 			<div className="mobile-toggle-menu"><i className='bx bx-menu'></i>
@@ -24,18 +66,18 @@ export default function Navbar(){
 						</Link>
 					</li>
 					<li className="nav-item dropdown dropdown-large">
-						<MenuBox/>
+						<MenuBox open={toggle.menuBox} setOpen={setMenuBox}/>
 					</li>
 					<li className="nav-item dropdown dropdown-large">
-						<NotifBox/>
+						<NotifBox open={toggle.notifBox} setOpen={setNotifBox}/>
 					</li>
 					<li className="nav-item dropdown dropdown-large">
-						<MessageBox/>
+						<MessageBox open={toggle.messageBox} setOpen={setMessageBox}/>
 					</li>
 				</ul>
 			</div>
 			<div className="user-box dropdown">
-				<UserBox/>
+				<UserBox open={toggle.userBox} setOpen={setUserBox}/>
 			</div>
 		</nav>
 	);
