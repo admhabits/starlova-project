@@ -1,3 +1,4 @@
 /admin/dashboard
+/admin/node_modules
 /node_modules
 .env
