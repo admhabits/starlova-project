@@ -1,4 +1,6 @@
 /admin/html
+/admin/build
 /admin/node_modules
 /node_modules
+/admin/yarn.lock
 .env

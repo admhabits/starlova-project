@@ -14,7 +14,7 @@ export default function MetisMenu(){
 					</Link>
 				</li>
 				<li>
-					<a to="javascript:;" className="has-arrow">
+					<a to="#" className="has-arrow">
 						<div className="parent-icon">
 							<i className="bx bx-book-content"></i>
 						</div>
@@ -34,7 +34,7 @@ export default function MetisMenu(){
 					</ul>
 				</li>
 				<li>
-					<a to="javascript:;" className="has-arrow">
+					<a to="#" className="has-arrow">
 						<div className="parent-icon">
 							<i className="bx bx-cart"></i>
 						</div>

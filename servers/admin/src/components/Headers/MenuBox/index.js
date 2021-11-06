@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function MenuBox(){
 	return (
 		<>
-			<a className="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">	<i className='bx bx-category'></i>
-			</a>
+			<Link className="nav-link dropdown-toggle dropdown-toggle-nocaret" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">	<i className='bx bx-category'></i>
+			</Link>
 			<div className="dropdown-menu dropdown-menu-end">
 				<div className="row row-cols-3 g-3 p-3">
 					<div className="col text-center">

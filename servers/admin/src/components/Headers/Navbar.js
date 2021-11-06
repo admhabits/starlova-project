@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import UserBox from './UserBox';
 import MenuBox from './MenuBox';
 import NotifBox from './NotifBox';
@@ -18,9 +19,9 @@ export default function Navbar(){
 			<div className="top-menu ms-auto">
 				<ul className="navbar-nav align-items-center">
 					<li className="nav-item mobile-search-icon">
-						<a className="nav-link" href="#">
+						<Link className="nav-link" to="#">
 							<i className='bx bx-search'></i>
-						</a>
+						</Link>
 					</li>
 					<li className="nav-item dropdown dropdown-large">
 						<MenuBox/>

@@ -1,4 +1,5 @@
 import React from 'react';
+import TrxHistory from './TrxHistory';
 
 export default function Home(){
 	return (
@@ -9,9 +10,9 @@ export default function Home(){
 						<div className="card-body">
 							<div className="d-flex align-items-center">
 								<div>
-									<p className="mb-0">Pendapatan</p>
+									<p className="mb-0">Total Pendapatan</p>
 									<h4 className="my-1">Rp 23.000.000</h4>
-									<p className="mb-0 font-13"><i className='bx bxs-up-arrow align-middle'></i>$34 Since last week</p>
+									<p className="mb-0 font-13"><i className='bx bxs-up-arrow align-middle'></i> Rp 2,500.000 Minggu yang lalu</p>
 								</div>
 								<div className="widgets-icons ms-auto"><i className='bx bxs-wallet'></i>
 								</div>
@@ -27,7 +28,7 @@ export default function Home(){
 								<div>
 									<p className="mb-0">Total Pelanggan</p>
 									<h4 className="my-1">8.4K</h4>
-									<p className="mb-0 font-13"><i className='bx bxs-up-arrow align-middle'></i>14% Since last week</p>
+									<p className="mb-0 font-13"><i className='bx bxs-up-arrow align-middle'></i> 14% Minggu yang lalu</p>
 								</div>
 								<div className="widgets-icons ms-auto"><i className='bx bxs-group'></i>
 								</div>
@@ -43,7 +44,7 @@ export default function Home(){
 								<div>
 									<p className="mb-0">Semua Pengunjung</p>
 									<h4 className="my-1">59K</h4>
-									<p className="mb-0 font-13"><i className='bx bxs-down-arrow align-middle'></i>12.4% Since last week</p>
+									<p className="mb-0 font-13"><i className='bx bxs-down-arrow align-middle'></i> 12.4% Minggu yang lalu</p>
 								</div>
 								<div className="widgets-icons ms-auto"><i className='bx bxs-binoculars'></i>
 								</div>
@@ -53,6 +54,7 @@ export default function Home(){
 					</div>
 				</div>
 			</div>
+			<TrxHistory/>
 		</div>
 	);
 }

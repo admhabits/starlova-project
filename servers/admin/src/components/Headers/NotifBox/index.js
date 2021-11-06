@@ -1,21 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function NotifBox(){
 	return (
 		<>
-			<a className="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			<Link className="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 				<span className="alert-count">3</span>
 				<i className='bx bx-bell'></i>
-			</a>
+			</Link>
 			<div className="dropdown-menu dropdown-menu-end">
-				<a href="javascript:;">
+				<Link to="#">
 					<div className="msg-header">
 						<p className="msg-header-title">Notifications</p>
 						<p className="msg-header-clear ms-auto">Marks all as read</p>
 					</div>
-				</a>
+				</Link>
 				<div className="header-notifications-list">
-					<a className="dropdown-item" href="javascript:;">
+					<Link className="dropdown-item" to="#">
 						<div className="d-flex align-items-center">
 							<div className="notify"><i className="bx bx-cart-alt"></i>
 							</div>
@@ -24,8 +25,8 @@ export default function NotifBox(){
 								<p className="msg-info">Kamu telah menerima pesanan baru</p>
 							</div>
 						</div>
-					</a>
-					<a className="dropdown-item" href="javascript:;">
+					</Link>
+					<Link className="dropdown-item" to="#">
 						<div className="d-flex align-items-center">
 							<div className="notify"><i className="bx bx-cart-alt"></i>
 							</div>
@@ -34,8 +35,8 @@ export default function NotifBox(){
 								<p className="msg-info">Kamu telah menerima pesanan baru</p>
 							</div>
 						</div>
-					</a>
-					<a className="dropdown-item" href="javascript:;">
+					</Link>
+					<Link className="dropdown-item" to="#">
 						<div className="d-flex align-items-center">
 							<div className="notify"><i className="bx bx-cart-alt"></i>
 							</div>
@@ -44,11 +45,11 @@ export default function NotifBox(){
 								<p className="msg-info">Kamu telah menerima pesanan baru</p>
 							</div>
 						</div>
-					</a>
+					</Link>
 				</div>
-				<a href="javascript:;">
+				<Link to="#">
 					<div className="text-center msg-footer">Lihat Semua Pemberitahuan</div>
-				</a>
+				</Link>
 			</div>
 		</>
 	);
