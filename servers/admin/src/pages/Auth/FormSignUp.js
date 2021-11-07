@@ -1,8 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export default function FormSignUp({check}) {
-	const [signup, setSignUp] = React.useState(null);
+export default function FormSignUp({check, setMessage}) {
 	const [firstname, setFirstname] = React.useState('');
 	const [lastname, setLastname] = React.useState('');
 	const [email, setEmail] = React.useState('');
@@ -14,27 +13,22 @@ export default function FormSignUp({check}) {
 		check(isChecked);
 		const username = email.split('@')[0];
 		if(isChecked){
-			setSignUp({
+			const signup = {
 				fullname: `${firstname} ${lastname}`,
 				email, 
 				username,
 				pass
-			})
-		}
-		SignUp();
-	}
-
-	const SignUp = () => {
-		if(signup){
+			}
 			axios.post(`http://localhost:4000/api/users/signup`, {signup})
 			.then(res => {
-				console.log(res.json())
+				console.log(res.data.message);
+				setMessage(res.data.message);
 			})
 			.catch(error => {
 				console.log('Error', error);
 			})
+			
 		}
-		
 	}
 	// console.log(signup);
 	return (
