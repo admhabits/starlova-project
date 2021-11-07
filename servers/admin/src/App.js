@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import LayoutPages from './components/LayoutPages';
 import Products from './components/Product/Products';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 import SignUp from './pages/Auth/SignUp';
 import axios from 'axios';
 
@@ -16,7 +17,9 @@ export default function App() {
 				<LayoutPages><Products/></LayoutPages>
 			)}/>
 			<Route path='/signup' component={SignUp}/>
-			<Redirect to='/'/>
+			<Route path='/*' render={ () => (
+				<NotFound/>
+			)}/>
 		</Switch>
 	)
 }
