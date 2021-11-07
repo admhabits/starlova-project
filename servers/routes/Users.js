@@ -96,17 +96,20 @@ router.post('/login', async (req, res) => {
 
 // Pendaftaran Users
 router.post('/signup', async (req, res) => {
-    const email = req.body.email;
-    const pass = md5(req.body.password);
-    const username = req.body.username;
+    const email = req.body.signup.email;
+    // console.log(req.body.signup);
+    const name = req.body.signup.fullname;
+    const pass = md5(req.body.signup.pass);
+    const username = req.body.signup.username;
     const userid = md5(email);
+
     if (username && email && pass && name) {
         con.query(`SELECT * FROM users WHERE email = '${email}' AND username = '${username}'`, function (err, result) {
             if (err) {
                 res.send({ err: 'Terjadi kesalahan!' })
             }
             if (result.length === 0) {
-                var sql = `INSERT INTO users (username, email, password, userid) VALUES ('${username}', '${email}', '${pass}', '${userid}')`;
+                var sql = `INSERT INTO users (name, username, email, password, userid) VALUES ('${name}', '${username}', '${email}', '${pass}', '${userid}')`;
                 con.query(sql, function (err, result) {
                     if (err) { throw err; }
                     res.status(200).send({ result })
