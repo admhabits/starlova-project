@@ -2,6 +2,7 @@ import React from 'react';
 import FormSignUp from './FormSignUp';
 
 export default function SignUp() {
+	const [check, setChecked] = React.useState(true);
 	return (
 	<div className="wrapper">
 		<div className="d-flex align-items-center justify-content-center my-5 my-lg-0">
@@ -19,6 +20,7 @@ export default function SignUp() {
 										<p>Sudah punya akun ? <a href="#">Login disini</a>
 										</p>
 									</div>
+									<div className="alert alert-danger" style={{display: check ? 'none' : ''}}>Kamu wajib setuju peraturan & persyaratan layanan</div>
 									{/*<div className="d-grid">
 										<a className="btn my-4 shadow-sm btn-light" href="#"> 
 											<span className="d-flex justify-content-center align-items-center">
@@ -33,7 +35,7 @@ export default function SignUp() {
 									<div className="login-separater text-center mb-4"> <span>SIGN UP WITH EMAIL</span>
 										<hr/>
 									</div>
-									<FormSignUp/>
+									<FormSignUp check={setChecked}/>
 								</div>
 							</div>
 						</div>

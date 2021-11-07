@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function FormSignUp() {
+export default function FormSignUp({check}) {
 	const [signup, setSignUp] = React.useState(null);
 	const [firstname, setFirstname] = React.useState('');
 	const [lastname, setLastname] = React.useState('');
@@ -10,15 +10,19 @@ export default function FormSignUp() {
 
 	const handleSignUp = (e) => {
 		e.preventDefault();
+		check(isChecked);
 		const username = email.split('@')[0];
-		setSignUp({
-			name: `${firstname} ${lastname}`,
-			email, 
-			username,
-			pass,
-			agree: isChecked
-		})
+		if(isChecked){
+			setSignUp({
+				name: `${firstname} ${lastname}`,
+				email, 
+				username,
+				pass
+			})
+		}
+		
 	}
+
 	console.log(signup);
 	return (
 		<div className="form-body">
@@ -45,6 +49,7 @@ export default function FormSignUp() {
 						className="form-control" 
 						id="inputLastName" 
 						placeholder="Wibowo"
+						required
 					/>
 				</div>
 				<div className="col-12">
@@ -57,6 +62,7 @@ export default function FormSignUp() {
 						className="form-control" 
 						id="inputEmailAddress" 
 						placeholder="wibowo@gmail.com"
+						required
 					/>
 				</div>
 				<div className="col-12">
@@ -69,6 +75,7 @@ export default function FormSignUp() {
 							className="form-control border-end-0" 
 							id="inputChoosePassword" value={pass} 
 							placeholder="Enter Password"
+							required
 						/> 
 						<a href="#" className="input-group-text bg-transparent"><i className='bx bx-hide'></i></a>
 					</div>
@@ -80,8 +87,11 @@ export default function FormSignUp() {
 							onChange={(e)=>setChecked(e.target.checked)} 
 							type="checkbox" id="flexSwitchCheckChecked" 
 							value={isChecked}
+							required
 						/>
-						<label className="form-check-label" htmlFor="flexSwitchCheckChecked">I read and agree to Terms & Conditions</label>
+
+						<label className="form-check-label" htmlFor="flexSwitchCheckChecked">Saya menyetujui peraturan & layanan perusahaan</label>
+						
 					</div>
 				</div>
 				<div className="col-12">
