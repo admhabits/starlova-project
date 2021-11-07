@@ -112,7 +112,7 @@ router.post('/signup', async (req, res) => {
                 var sql = `INSERT INTO users (name, username, email, password, userid) VALUES ('${name}', '${username}', '${email}', '${pass}', '${userid}')`;
                 con.query(sql, function (err, result) {
                     if (err) { throw err; }
-                    res.status(200).send({ result })
+                    res.status(200).send({ result, message: 'Pendaftaran berhasil!', code: 200 })
                     console.log(result)
                 })
 
