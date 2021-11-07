@@ -1,7 +1,7 @@
 const pathname = window.location.pathname;
 // console.log(path);
 
-if(pathname !== 'auth'){
+if(pathname === '/'){
 	$(function() {
 		"use strict";
 		var chartTotalPendapatan = {
