@@ -1,5 +1,7 @@
 const path = window.location.pathname;
-if(path !== '/auth'){
+// console.log(path);
+
+if(path !== '/auth' && path !== '/signup'){
 	$(function() {
 		"use strict";
 		new PerfectScrollbar(".header-message-list"),

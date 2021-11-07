@@ -2,6 +2,7 @@
   "name": "arkana-dv",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/",
   "dependencies": {
     "@rehooks/local-storage": "^2.4.1",
     "@rehooks/online-status": "^1.1.2",

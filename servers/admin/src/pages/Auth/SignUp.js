@@ -19,7 +19,7 @@ export default function SignUp() {
 										<p>Sudah punya akun ? <a href="#">Login disini</a>
 										</p>
 									</div>
-									<div className="d-grid">
+									{/*<div className="d-grid">
 										<a className="btn my-4 shadow-sm btn-light" href="#"> 
 											<span className="d-flex justify-content-center align-items-center">
 						                        <img className="me-2" src="assets/images/icons/search.svg" width="16" alt="Image Description"/>
@@ -29,8 +29,8 @@ export default function SignUp() {
 										<a href="#" className="btn btn-light">
 											<i className="bx bxl-facebook"></i>Sign Up With Facebook
 										</a>
-									</div>
-									<div className="login-separater text-center mb-4"> <span>OR SIGN UP WITH EMAIL</span>
+									</div>*/}
+									<div className="login-separater text-center mb-4"> <span>SIGN UP WITH EMAIL</span>
 										<hr/>
 									</div>
 									<FormSignUp/>
